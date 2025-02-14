@@ -84,9 +84,3 @@ void r_alloc() {
 
     free(ptr);
 }
-
-int main() {
-    mem_alloc();
-    
-    return 0;
-}
