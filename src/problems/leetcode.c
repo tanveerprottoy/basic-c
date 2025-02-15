@@ -50,11 +50,15 @@ int removeDuplicates(int* nums, int numsSize) {
     // first element is always counted unique
     int k = 1;
 
-    for (int i = 0; i < numsSize; i++) {
+    // start from 1 as first element is always unique
+    for (int i = 1; i < numsSize; i++) {
         // as nums sorted in non-decreasing order
         // only need to compare previous element to the next
         // increment k when an unique element is seen
-        if (nums[i] != nums[k]) {
+        // as k represent the next slot to be replaced
+        // need to check with the previous element at k-1
+        // which is the last inserted element
+        if (nums[i] != nums[k - 1]) {
             // unique element is seen
             // move it to k
             nums[k] = nums[i];
