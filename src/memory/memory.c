@@ -8,6 +8,7 @@ void m_alloc() {
     scanf("%d", &n);
 
     // allocate memory
+    // malloc() function allocates memory and leaves the memory uninitialized
     ptr = (int *)malloc(n * sizeof(int));
 
     // if memory cannot be allocated
@@ -37,6 +38,7 @@ void c_alloc() {
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
+    // the calloc() function writes zeroes into all of the allocated memory
     ptr = (int *)calloc(n, sizeof(int));
 
     if (ptr == NULL) {
