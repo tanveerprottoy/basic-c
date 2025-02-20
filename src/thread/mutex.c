@@ -1,3 +1,4 @@
 #include <pthread.h>
 
-p_thread_mutex_t mutex;
+pthread_mutex_t mutex;
+
