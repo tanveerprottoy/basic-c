@@ -25,7 +25,7 @@ int main() {
 
     int size = sizeof(nums) / sizeof(nums[0]);
 
-    printf("%d", removeDuplicates(ptr, size)); */
+    printf("%d\n", removeDuplicates(ptr, size)); */
 
     increment();
 
