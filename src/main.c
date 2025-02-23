@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "problems/leetcode.c"
+#include "thread/mutex.c"
 
 int main() {
     //     mem_alloc();
@@ -18,13 +19,17 @@ int main() {
 
      printf("TAFHEEM\n"); */
 
-    int nums[10] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+    /* int nums[10] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
     int* ptr = nums;
 
     int size = sizeof(nums) / sizeof(nums[0]);
 
-    printf("%d", removeDuplicates(ptr, size));
+    printf("%d", removeDuplicates(ptr, size)); */
+
+    increment();
+
+    printf("%d\n", read());
 
     return 0;
 }
