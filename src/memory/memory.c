@@ -1,6 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void simple_malloc() {
+    int *ptr;
+
+    // allocate memory
+    ptr = (int *)malloc(10 * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory not allocated");
+
+        exit(EXIT_SUCCESS);
+    }
+
+    for (int i = 0; i < 10; i++) {
+        *(ptr + i) = i;
+    }
+
+    printf("Printing elements: ");
+
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", *(ptr + i));
+    }
+
+    // deallocate the memory
+    free(ptr);
+
+    // set the pointer to NULL
+    ptr = NULL;
+}
+
 void m_alloc() {
     int n, i, *ptr, sum = 0;
 
@@ -15,7 +43,7 @@ void m_alloc() {
     if (ptr == NULL) {
         printf("Error! memory not allocated.");
 
-        exit(0);
+        exit(EXIT_SUCCESS);
     }
 
     printf("Enter elements: ");
@@ -30,6 +58,9 @@ void m_alloc() {
 
     // deallocate the memory
     free(ptr);
+
+    // set the pointer to NULL
+    ptr = NULL;
 }
 
 void c_alloc() {
@@ -44,7 +75,7 @@ void c_alloc() {
     if (ptr == NULL) {
         printf("Error! memory not allocated.");
 
-        exit(0);
+        exit(EXIT_SUCCESS);
     }
 
     printf("Enter elements: ");
@@ -57,7 +88,11 @@ void c_alloc() {
 
     printf("Sum = %d", sum);
 
+    // deallocate the memory
     free(ptr);
+
+    // set the pointer to NULL
+    ptr = NULL;
 }
 
 void r_alloc() {
@@ -70,8 +105,9 @@ void r_alloc() {
 
     printf("Addresses of previously allocated memory:\n");
 
-    for (i = 0; i < n1; ++i)
+    for (i = 0; i < n1; ++i) {
         printf("%pc\n", ptr + i);
+    }
 
     printf("\nEnter the new size: ");
     scanf("%d", &n2);
@@ -81,8 +117,13 @@ void r_alloc() {
 
     printf("Addresses of newly allocated memory:\n");
 
-    for (i = 0; i < n2; ++i)
+    for (i = 0; i < n2; ++i) {
         printf("%pc\n", ptr + i);
+    }
 
+    // deallocate the memory
     free(ptr);
+
+    // set the pointer to NULL
+    ptr = NULL;
 }
