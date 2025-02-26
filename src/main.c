@@ -85,9 +85,9 @@ void misc() {
 }
 
 void thread_safe_counter() {
-    /* increment();
+    increment();
 
-    printf("%d\n", read()); */
+    printf("%d\n", read());
 }
 
 int main() {
