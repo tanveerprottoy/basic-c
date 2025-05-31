@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 void simple_malloc() {
-    int *ptr;
+    int* ptr;
 
     // allocate memory
-    ptr = (int *)malloc(10 * sizeof(int));
+    ptr = (int*)malloc(sizeof(int) * 10);
     if (ptr == NULL) {
         printf("Memory not allocated");
 
@@ -30,14 +30,15 @@ void simple_malloc() {
 }
 
 void m_alloc() {
-    int n, i, *ptr, sum = 0;
+    int n, i, sum = 0;
+    int* ptr;
 
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
     // allocate memory
     // malloc() function allocates memory and leaves the memory uninitialized
-    ptr = (int *)malloc(n * sizeof(int));
+    ptr = (int*)malloc(sizeof(int) * n);
 
     // if memory cannot be allocated
     if (ptr == NULL) {
@@ -70,7 +71,7 @@ void c_alloc() {
     scanf("%d", &n);
 
     // the calloc() function writes zeroes into all of the allocated memory
-    ptr = (int *)calloc(n, sizeof(int));
+    ptr = (int*)calloc(n, sizeof(int));
 
     if (ptr == NULL) {
         printf("Error! memory not allocated.");
@@ -96,12 +97,13 @@ void c_alloc() {
 }
 
 void r_alloc() {
-    int *ptr, i, n1, n2;
+    int i, n1, n2;
+    int* ptr;
 
     printf("Enter size: ");
     scanf("%d", &n1);
 
-    ptr = (int *)malloc(n1 * sizeof(int));
+    ptr = (int*)malloc(sizeof(int) * n1);
 
     printf("Addresses of previously allocated memory:\n");
 

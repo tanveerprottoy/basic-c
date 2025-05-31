@@ -1,3 +1,4 @@
+#include "student.h"
 #include <stdio.h>
 
 struct Student {
@@ -5,6 +6,35 @@ struct Student {
     int roll;
     float marks;
 };
+
+// pass by value
+void display(struct Student s) {
+    printf("\nDisplaying information\n");
+    printf("Name: %s", s.name);
+    printf("\Roll: %d", s.roll);
+    printf("\Marks: %f", s.marks);
+}
+
+// pass by reference
+void detail(struct Student* s) {
+    printf("\nDisplaying information\n");
+    printf("Name: %s", s->name);
+    printf("\Roll: %d", s->roll);
+    printf("\Marks: %f", s->marks);
+}
+
+struct Student create_student() {
+    struct Student s;
+
+    printf("Enter name: ");
+    scanf("%s", s.name);
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+
+    return s;
+}
 
 void struct_example_simple() {
     struct Student s;
@@ -41,14 +71,14 @@ void struct_example_simple() {
 }
 
 void struct_example_dynamic_allocation() {
-    struct Student *ptr;
+    struct Student* ptr;
     int i, n;
 
     printf("Enter the number of students: ");
     scanf("%d", &n);
 
     // allocating memory for n numbers of struct person
-    ptr = (struct Student *)malloc(n * sizeof(struct Student));
+    ptr = (struct Student*)malloc(sizeof(struct Student) * n);
 
     for (i = 0; i < n; ++i) {
         printf("Enter name, roll and marks respectively: ");
